@@ -5,21 +5,21 @@ from  graph import Graph
 graph = Graph()
 
 # Inisialisasi Jalur Huruf (Menggunakan array)
-my_vertices = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+my_vertices = ['sarijadi', 'surya sumantri', 'cibogo', 'pasteur', 'gerlong', 'dr.setiabudi', 'lemah neundeut', 'Sukajadi', 'sukagalih']
 for vertex in my_vertices:
     graph.add_vertex(vertex)
 
 # Operator yang digunakan (Mendeklarasikan jarak antara huruf pada variable my_vertices menggunakan array)
-graph.add_edge('A', 'B') # jarak 1
-graph.add_edge('A', 'C') # jarak 1
-graph.add_edge('A', 'D') # jarak 1
-graph.add_edge('C', 'D') # jarak 1
-graph.add_edge('C', 'G') # jarak 1
-graph.add_edge('D', 'G') # jarak 1
-graph.add_edge('D', 'H') # jarak 1
-graph.add_edge('B', 'E') # jarak 1
-graph.add_edge('B', 'F') # jarak 1
-graph.add_edge('E', 'I') # jarak 1
+graph.add_edge('sarijadi', 'surya sumantri') # jarak 1
+graph.add_edge('sarijadi', 'cibogo') # jarak 1
+graph.add_edge('sarijadi', 'pasteur') # jarak 1
+graph.add_edge('cibogo', 'pasteur') # jarak 1
+graph.add_edge('cibogo', 'lemah neundeut') # jarak 1
+graph.add_edge('pasteur', 'lemah neundeut') # jarak 1
+graph.add_edge('pasteur', 'Sukajadi') # jarak 1
+graph.add_edge('surya sumantri', 'gerlong') # jarak 1
+graph.add_edge('surya sumantri', 'dr.setiabudi') # jarak 1
+graph.add_edge('gerlong', 'sukagalih') # jarak 1
 
 # Fungsi untuk membuat visualisasi grafik
 def draw_graph(graph):
@@ -32,10 +32,10 @@ def draw_graph(graph):
     plt.show()
 
 # Memanggil fungsi BFS (Initial state)
-graph.bfs("A")
+graph.bfs("pasteur")
 
 # Menampilkan jalur tujuan (goal state) 
-print(graph.return_path("I"))
+print(graph.return_path("gerlong"))
 
 # Memanggil fungsi untuk membuat visualisasi grafik
 draw_graph(graph)
