@@ -5,7 +5,7 @@ from  graph import Graph
 graph = Graph()
 
 # Inisialisasi Jalur Huruf (Menggunakan array)
-my_vertices = ['sarijadi', 'surya sumantri', 'cibogo', 'pasteur', 'gerlong', 'dr.setiabudi', 'lemah neundeut', 'Sukajadi', 'sukagalih']
+my_vertices = ['sarijadi', 'surya sumantri', 'cibogo', 'pasteur', 'gerlong', 'dr. setiabudi', 'lemah neundeut', 'sukajadi', 'sukagalih', 'pasir kaliki', 'abdurrahman saleh', 'padjajaran', 'cimindi', 'gunung batu', 'cimahi']
 for vertex in my_vertices:
     graph.add_vertex(vertex)
 
@@ -13,13 +13,22 @@ for vertex in my_vertices:
 graph.add_edge('sarijadi', 'surya sumantri') # jarak 1
 graph.add_edge('sarijadi', 'cibogo') # jarak 1
 graph.add_edge('sarijadi', 'pasteur') # jarak 1
-graph.add_edge('cibogo', 'pasteur') # jarak 1
-graph.add_edge('cibogo', 'lemah neundeut') # jarak 1
-graph.add_edge('pasteur', 'lemah neundeut') # jarak 1
-graph.add_edge('pasteur', 'Sukajadi') # jarak 1
 graph.add_edge('surya sumantri', 'gerlong') # jarak 1
-graph.add_edge('surya sumantri', 'dr.setiabudi') # jarak 1
-graph.add_edge('gerlong', 'sukagalih') # jarak 1
+graph.add_edge('gerlong', 'dr. setiabudi') # jarak 1
+graph.add_edge('dr. setiabudi', 'lemah neundeut') # jarak 1
+graph.add_edge('cibogo', 'lemah neundeut') # jarak 1
+graph.add_edge('pasteur', 'sukajadi') # jarak 1
+graph.add_edge('sukajadi', 'sukagalih') # jarak 1
+graph.add_edge('sukagalih', 'pasir kaliki') # jarak 1
+graph.add_edge('pasir kaliki', 'lemah neundeut') # jarak 1
+graph.add_edge('lemah neundeut', 'abdurrahman saleh') # jarak 1
+graph.add_edge('lemah neundeut', 'padjajaran') # jarak 1
+graph.add_edge('abdurrahman saleh', 'cimindi') # jarak 1
+graph.add_edge('abdurrahman saleh', 'gunung batu') # jarak 1
+graph.add_edge('gunung batu', 'cimahi') # jarak 1
+graph.add_edge('cimindi', 'cimahi') # jarak 1
+graph.add_edge('cimahi', 'padjajaran') # jarak 1
+graph.add_edge('cimindi', 'gunung batu') # jarak 1
 
 # Fungsi untuk membuat visualisasi grafik
 def draw_graph(graph):
@@ -32,10 +41,10 @@ def draw_graph(graph):
     plt.show()
 
 # Memanggil fungsi BFS (Initial state)
-graph.bfs("pasteur")
+graph.bfs("surya sumantri")
 
 # Menampilkan jalur tujuan (goal state) 
-print(graph.return_path("gerlong"))
+print(graph.return_path("gunung batu"))
 
 # Memanggil fungsi untuk membuat visualisasi grafik
 draw_graph(graph)
