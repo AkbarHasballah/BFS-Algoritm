@@ -27,8 +27,7 @@ graph.add_edge('abdurrahman saleh', 'cimindi') # jarak 1
 graph.add_edge('abdurrahman saleh', 'gunung batu') # jarak 1
 graph.add_edge('gunung batu', 'cimahi') # jarak 1
 graph.add_edge('cimindi', 'cimahi') # jarak 1
-graph.add_edge('cimahi', 'padjajaran') # jarak 1
-graph.add_edge('cimindi', 'gunung batu') # jarak 1
+graph.add_edge('lemah neundeut', 'padjajaran') # jarak 1
 
 # Fungsi untuk membuat visualisasi grafik
 def draw_graph(graph):
